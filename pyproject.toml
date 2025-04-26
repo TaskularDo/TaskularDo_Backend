@@ -1,0 +1,33 @@
+[project]
+name = "TaskularDo_Backend"
+version = "0.1.0"
+description = "TaskularDo Backend"
+authors = [{ name = "Anthony Gabriel Loche dos Reis", email = "anthonylocheifc@gmail.com" }]
+dependencies = ["django>=5.2", "djangorestframework>=3.16.0", "djangorestframework-simplejwt>=5.5.0", "cffi>=1.17.1", "cryptography>=44.0.2"]
+requires-python = ">=3.13"
+readme = "README.md"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.scripts]
+dev = "python manage.py runserver"
+runserver = "python manage.py runserver"
+createsuperuser = "python manage.py createsuperuser"
+changepassword = "python manage.py changepassword"
+migrate = "python manage.py migrate"
+makemigrations = "python manage.py makemigrations"
+shell = "python manage.py shell"
+test = "python manage.py test"
+startapp = "python manage.py startapp {args}"
+loaddata = "python manage.py loaddata {args}"
+dumpdata = "python manage.py dumpdata {args}"
+model = "python manage.py graph_models -a -g -o models.png"
+migrate_db = "python manage.py migrate_db"
+req = "pdm export -f requirements --without-hashes -o requirements.txt"
